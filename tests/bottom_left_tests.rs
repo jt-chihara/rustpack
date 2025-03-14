@@ -1,4 +1,4 @@
-use rustpack::{Rectangle, bottom_left_placement};
+use rustpack::{bottom_left_placement, Rectangle, Position};
 
 #[test]
 fn test_placement_basic() {
@@ -76,4 +76,23 @@ fn test_placement_exact_fit() {
     let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height);
 
     assert_eq!(placed_rectangles.len(), 2);
+}
+
+#[test]
+fn test_placement_positions() {
+    let rectangles = vec![
+        Rectangle { width: 2, height: 2 },
+        Rectangle { width: 3, height: 2 },
+    ];
+
+    let container_width = 5;
+    let container_height = 5;
+
+    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height);
+
+    assert_eq!(placed_rectangles.len(), 2);
+    
+    assert_eq!(placed_rectangles[0].1, Position { x: 0, y: 0 });
+    
+    assert_eq!(placed_rectangles[1].1, Position { x: 2, y: 0 });
 }
