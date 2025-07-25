@@ -11,7 +11,7 @@ fn test_placement_basic() {
     let container_width = 5;
     let container_height = 5;
 
-    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height);
+    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height, false);
 
     assert_eq!(placed_rectangles.len(), 3);
 }
@@ -26,7 +26,7 @@ fn test_placement_with_overflow() {
     let container_width = 5;
     let container_height = 5;
 
-    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height);
+    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height, false);
 
     assert_eq!(placed_rectangles.len(), 1);
 }
@@ -40,7 +40,7 @@ fn test_placement_no_space() {
     let container_width = 5;
     let container_height = 5;
 
-    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height);
+    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height, false);
 
     // 矩形が配置できない場合
     assert_eq!(placed_rectangles.len(), 0);
@@ -58,7 +58,7 @@ fn test_placement_varied_sizes() {
     let container_width = 5;
     let container_height = 5;
 
-    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height);
+    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height, false);
 
     assert_eq!(placed_rectangles.len(), 3);
 }
@@ -73,7 +73,7 @@ fn test_placement_exact_fit() {
     let container_width = 5;
     let container_height = 5;
 
-    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height);
+    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height, false);
 
     assert_eq!(placed_rectangles.len(), 2);
 }
@@ -88,7 +88,7 @@ fn test_placement_positions() {
     let container_width = 5;
     let container_height = 5;
 
-    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height);
+    let placed_rectangles = bottom_left_placement(&rectangles, container_width, container_height, false);
 
     assert_eq!(placed_rectangles.len(), 2);
     
