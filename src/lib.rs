@@ -14,11 +14,13 @@ mod bottom_left;
 mod maxrects;
 mod skyline;
 mod guillotine;
+mod packer;
 
 pub use bottom_left::bottom_left_placement;
 pub use maxrects::{maxrects_placement, FreeRect};
 pub use skyline::{skyline_placement, SkylineNode};
 pub use guillotine::{guillotine_placement, GuillotineRect};
+pub use packer::{Packer, PackAlgorithm, PackedRect};
 
 
 /// BL安定点が真にBL点かどうかを確認する関数
